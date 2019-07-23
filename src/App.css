@@ -22,7 +22,18 @@
 .App-link {
   color: #61dafb;
 }
-
+.bdy{
+  margin-top: 50px;
+}
+.Apps{
+  padding: 15px 25px;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0px 5px 0 rgba(0,0,0,.16), 0 0px 2px 2px rgba(0,0,0,.12);
+}
+.submitbtn{
+  margin-top: 20px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
