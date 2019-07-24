@@ -21,12 +21,11 @@ class Landing extends Component{
     event.preventDefault();
     if(this.state.value!== '')
     {
-    axios.get('https://my-json-server.typicode.com/anniArrti/demo-1/db')
+    axios.get('https://my-json-server.typicode.com/aftab-hassan/demo/db')
       .then(function (response) { 
-        console.log(response);
          that.setState({
-          forehand : response.data.Response.forehand,
-          backhand:response.data.Response.backhand
+          forehand : response.data.forehands,
+          backhand:response.data.backhands
         });
       });
     }
@@ -36,7 +35,7 @@ class Landing extends Component{
        return (
           <tr key={index}>
              <td>{index+1}</td>
-             <td>{forehand_data}</td>
+             <td><a href={forehand_data} target="_blank" rel="noopener noreferrer">{forehand_data}</a></td>
           </tr>
        )
     })
@@ -46,7 +45,7 @@ class Landing extends Component{
      return (
         <tr key={index}>
            <td>{index+1}</td>
-           <td>{backhand_data}</td>
+           <td><a href={backhand_data} target="_blank" rel="noopener noreferrer">{backhand_data}</a></td>
         </tr>
      )
   })
@@ -69,6 +68,7 @@ render() {
         <div className="row bdy">
         <div className="col-md-2 ms-sm12 ms-md4 ms-lg2" />
           <div className="col-md-4">
+          <label>Forehands</label>
               <table className="table table-striped">
                 <thead>
                 <tr>
@@ -82,7 +82,9 @@ render() {
               </table>
           </div> 
           <div className="col-md-4">
+          <label>Backhands</label>
             <table className="table table-striped">
+            
               <thead>
                 <tr>
                     <th>Sr No.</th>
